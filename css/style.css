@@ -1,0 +1,106 @@
+body {
+    max-width: 200px;
+    max-height: 200px;
+    perspective: 1000px;
+    margin: 300px auto 0;
+}
+.container{
+    max-width: 1310px;
+}
+
+.text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700px;
+}
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation:  spin  5s     infinite  linear  ;
+}
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+.top {
+    background-color: rgba(255, 0, 0, .6);
+    transform: rotateX(90deg) translateZ(100px);
+}
+.bottom {
+    background-color: rgba(0, 255, 0, .6);
+    transform: rotateX(-90deg) translateZ(100px);
+}
+.right {
+    background-color: rgba(0, 0, 255, .6);
+    transform: rotateY(90deg) translateZ( 100px);
+}
+.left {
+    background-color: rgba( 255, 0, 255, .6,);
+    transform: rotateY(-90deg) translateZ(100px);
+}
+.back {
+    background-color: rgba( 0,  255,  255, .6 );
+    transform: rotateX(-180deg) translateZ(100px);
+}
+.front {
+    background-color: rgba( 255,  255,  0,  .6);
+    transform: rotateX(0deg) translateZ(100px);
+}
+
+@keyframes spin {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+@media (max-width:520px)  {
+    body {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .face{
+        width: 140px;
+        height: 140px;
+    }
+
+    .text{
+        font-size: 14px;
+    }
+    .top {
+        background-color: rgba(255, 0, 0, .6);
+        transform: rotateX(90deg) translateZ(70px);
+    }
+    .bottom {
+        background-color: rgba(0, 255, 0, .6);
+        transform: rotateX(-90deg) translateZ(70px);
+    }
+    .right {
+        background-color: rgba(0, 0, 255, .6);
+        transform: rotateY(90deg) translateZ( 70px);
+    }
+    .left {
+        background-color: rgba( 255, 0, 255, .6,);
+        transform: rotateY(-90deg) translateZ(70px);
+    }
+    .back {
+        background-color: rgba( 0,  255,  255, .6 );
+        transform: rotateX(-180deg) translateZ(70px);
+    }
+    .front {
+        background-color: rgba( 255,  255,  0,  .6);
+        transform: rotateX(0deg) translateZ(70px);
+    }
+}
